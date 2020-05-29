@@ -198,7 +198,7 @@ function generateOutput( $docbook_folder ) {
 		}
 	}
 
-	shell_exec( "xsltproc --output ./uploads/$docbook_folder/$docbook_folder.html --stringparam html.stylesheet  docbookexport_styles.css --stringparam fop1.extensions 1 ./docbook-xsl-1.79.1/html/docbook.xsl ./uploads/$docbook_folder/$docbook_folder.xml" );
+	shell_exec( "xsltproc --output ./uploads/$docbook_folder/$docbook_folder.html --stringparam html.stylesheet  docbookexport_styles.css --stringparam fop1.extensions 1 ./docbook-xsl/html/docbook.xsl ./uploads/$docbook_folder/$docbook_folder.xml" );
 
 	$page_html = file_get_contents( "./uploads/$docbook_folder/$docbook_folder.pandochtml" );
 
@@ -262,7 +262,7 @@ function generateOutput( $docbook_folder ) {
 		rename( $temp_filepath, $output_filepath );
 	}
 
-	shell_exec( "./docbook2odf-0.244/utils/docbook2odf -f --debug -output-dir=./uploads/$docbook_folder -xsl-file=./docbook2odf-0.244/xsl ./uploads/$docbook_folder/$docbook_folder.xml" );
+	shell_exec( "./docbook2odf/utils/docbook2odf -f --debug -output-dir=./uploads/$docbook_folder -xsl-file=./docbook2odf/xsl ./uploads/$docbook_folder/$docbook_folder.xml" );
 
 	$all_files = [];
 	$files = scandir( "./uploads/$docbook_folder/$docbook_folder.od.temp/Pictures" );

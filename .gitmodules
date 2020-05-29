@@ -1,0 +1,6 @@
+[submodule "docbook-xsl"]
+	path = docbook-xsl
+	url = git@github.com:hexmode/docbook-xsl.git
+[submodule "docbook2odf"]
+	path = docbook2odf
+	url = git@github.com:hexmode/docbook2odf.git
